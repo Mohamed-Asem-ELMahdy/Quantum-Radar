@@ -2,7 +2,7 @@
 void main() {
 
     Vehicle vehicle1 = new PrivateCar("ABC123");
-    RadarObservation radarObservation = new RadarObservation(vehicle1, new Date(), 100, true);
+    RadarObservation radarObservation = new RadarObservation(vehicle1, new Date(), 100, false);
 
     Fine fineCalculator = new Fine();
 
