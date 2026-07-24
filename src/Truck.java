@@ -3,4 +3,8 @@ public class Truck extends Vehicle{
         carType = "Truck";
         this.plateNumber = plateNumber;
     }
+
+    public float getMaxSpeed(){
+        return TrafficRules.truckMaxSpeed;
+    }
 }

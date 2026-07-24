@@ -3,4 +3,7 @@ public class PrivateCar extends Vehicle{
         carType = "Private Car";
         this.plateNumber = plateNumber;
     }
+    public float getMaxSpeed(){
+        return TrafficRules.privateCarMaxSpeed;
+    }
 }

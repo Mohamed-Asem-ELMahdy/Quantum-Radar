@@ -1,7 +1,9 @@
 import javax.xml.crypto.Data;
 
-public class Vehicle {
+public abstract class Vehicle {
     public String plateNumber;
     public String carType;
+
+    public abstract float getMaxSpeed();
 }
 

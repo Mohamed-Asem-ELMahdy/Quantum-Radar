@@ -17,19 +17,12 @@ public class Fine {
         this.amount = 0;
         this.violations.clear();
 
-        if(vehicle.carType == "Truck") {
-            if(radarObservation.speed > TrafficRules.truckMaxSpeed){
-                amount += TrafficRules.speedTax;
-                violations.add("- speed of " + radarObservation.speed + " exceeded max allowed " + TrafficRules.truckMaxSpeed);
-            }
-        } else if(vehicle.carType == "Private Car"){
-            if(radarObservation.speed > TrafficRules.privateCarMaxSpeed){
-                amount += TrafficRules.speedTax;
-                violations.add("- speed of " + radarObservation.speed + " exceeded max allowed " + TrafficRules.privateCarMaxSpeed);
-            }
+        if( vehicle.getMaxSpeed() < radarObservation.speed ){
+            amount += TrafficRules.speedTax;
+            violations.add("- speed of " + radarObservation.speed + " exceeded max allowed " + TrafficRules.truckMaxSpeed);
         }
 
-        if(radarObservation.seatbeltStatus){
+        if(!radarObservation.seatbeltStatus){
             amount += TrafficRules.seatBeltTax;
             violations.add("- Seatbelt not fastened : " + TrafficRules.seatBeltTax);
         }
